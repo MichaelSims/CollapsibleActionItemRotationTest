@@ -1,17 +1,17 @@
 package com.example;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import com.actionbarsherlock.app.SherlockActivity;
+import com.actionbarsherlock.view.Menu;
+import com.actionbarsherlock.view.MenuInflater;
+import com.actionbarsherlock.view.MenuItem;
 
-public class MainActivity extends Activity {
+public class MainActivity extends SherlockActivity {
 
     private static final String TAG = "CollapsibleActionItemRotationTest";
 
@@ -24,12 +24,12 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         Log.i(TAG, "onCreate");
         setContentView(R.layout.main);
-        getActionBar().setTitle("Testing");
+        getSupportActionBar().setTitle("Testing");
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
+        MenuInflater menuInflater = getSupportMenuInflater();
         menuInflater.inflate(R.menu.menu, menu);
 
         final MenuItem search = menu.findItem(R.id.menu_search);
